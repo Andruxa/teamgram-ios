@@ -473,7 +473,7 @@ func initializedNetwork(accountId: AccountRecordId, arguments: NetworkInitializa
             if testingEnvironment {
                 seedAddressList = [
                     // 1: ["127.0.0.1"]
-                    1: ["47.103.102.219"]
+                    1: ["10.73.105.104"]
                     // 1: ["149.154.175.10"],
                     // 2: ["149.154.167.40"],
                     // 3: ["149.154.175.117"]
@@ -481,7 +481,7 @@ func initializedNetwork(accountId: AccountRecordId, arguments: NetworkInitializa
             } else {
                 seedAddressList = [
                     // 1: ["127.0.0.1"]
-                    1: ["47.103.102.219"]
+                    1: ["10.73.105.104"]
                     // 1: ["149.154.175.50", "2001:b28:f23d:f001::a"],
                     // 2: ["149.154.167.50", "95.161.76.100", "2001:67c:4e8:f002::a"],
                     // 3: ["149.154.175.100", "2001:b28:f23d:f003::a"],
