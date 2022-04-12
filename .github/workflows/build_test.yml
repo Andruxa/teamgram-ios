@@ -89,9 +89,7 @@ jobs:
             --disableParallelSwiftmoduleGeneration \
             --configurationPath="$HOME/telegram-configuration" \
             --buildNumber=$BUILD_NUMBER \
-            --configuration=release_universal \
-            --disableExtensions \
-            --disableProvisioningProfiles
+            --configuration=release_universal 
 
           # collect ipa
           OUTPUT_PATH="build/artifacts"
