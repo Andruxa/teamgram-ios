@@ -1,4 +1,4 @@
-name: CI_test
+name: CI
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
           fetch-depth: '0'
 
       - name: Set active Xcode path
-        run: sudo xcode-select -s /Applications/Xcode_13.2.1.app/Contents/Developer
+        run: sudo xcode-select -s /Applications/Xcode_12.4.app/Contents/Developer
 
       - name: Create canonical source directory
         run: |
@@ -72,7 +72,7 @@ jobs:
           done
           # fake certificates are self-signed, so we need to manually mark them as trusted (otherwise bazel will not pick them up)
           for f in "$CERTS_PATH"/*.cer; do
-            sudo security -i add-trusted-cert -d -r trustRoot -p codeSign -k "$MY_KEYCHAIN" "$f"
+            sudo security add-trusted-cert -d -r trustRoot -p codeSign -k "$MY_KEYCHAIN" "$f"
           done
           security set-key-partition-list -S apple-tool:,apple: -k "$MY_KEYCHAIN_PASSWORD" "$MY_KEYCHAIN"
 
@@ -89,7 +89,7 @@ jobs:
             --disableParallelSwiftmoduleGeneration \
             --configurationPath="$HOME/telegram-configuration" \
             --buildNumber=$BUILD_NUMBER \
-            --configuration=release_universal 
+            --configuration=release_universal
 
           # collect ipa
           OUTPUT_PATH="build/artifacts"
